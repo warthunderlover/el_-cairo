@@ -9,69 +9,77 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="327dp"
-        android:layout_height="261dp"
+        android:layout_width="345dp"
+        android:layout_height="373dp"
         android:background="#2A2828"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.595">
+        app:layout_constraintVertical_bias="0.731">
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnAcceder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#2A2828"
-        android:text="Acceder"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="434dp" />
-
     <EditText
-        android:id="@+id/editTextText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/txt_contra"
+        android:layout_width="247dp"
+        android:layout_height="52dp"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.456" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¿Ha olvidado su contraseña?"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.693" />
-
-    <EditText
-        android:id="@+id/editTextTextPassword2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
-        android:ems="10"
+        android:hint="Contraseña"
+        android:textColorHint="@color/white"
         android:inputType="textPassword"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.614" />
+
+    <EditText
+        android:id="@+id/txt_nombre"
+        android:layout_width="243dp"
+        android:layout_height="61dp"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:hint="Nombre"
+        android:textColorHint="@color/white"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.471" />
+
+    <Button
+        android:id="@+id/btnAcceder"
+        android:layout_width="125dp"
+        android:layout_height="51dp"
+        android:backgroundTint="#2A2828"
+        android:onClick="Acc"
+        android:text="Acceder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.719" />
+
+    <Button
+        android:id="@+id/btnAcceder2"
+        android:layout_width="238dp"
+        android:layout_height="59dp"
+        android:backgroundTint="#2A2828"
+        android:onClick="Recuperacion"
+        android:text="¿Ha olvidado su Contraseña?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.542" />
+        app:layout_constraintVertical_bias="0.818" />
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar"
