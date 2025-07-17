@@ -59,7 +59,7 @@
         android:layout_width="125dp"
         android:layout_height="51dp"
         android:backgroundTint="#2A2828"
-        android:onClick="Acc"
+        android:onClick="Menu"
         android:text="Acceder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

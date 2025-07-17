@@ -22,7 +22,12 @@ public class recuperacion_ extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        if(getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            getSupportActionBar().setDisplayShowHomeEnabled(false);
+        }
     }
+
     public void Main(View view){
         Intent main = new Intent(this, MainActivity.class);
         startActivity(main);

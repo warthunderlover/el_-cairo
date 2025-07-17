@@ -31,4 +31,8 @@ public class MainActivity extends AppCompatActivity {
         Intent main = new Intent(this, menu_principal.class);
         startActivity(main);
     }
+    public void Menu(View view){
+        Intent menu = new Intent(this, menu_principal.class);
+        startActivity(menu);
+    }
 }

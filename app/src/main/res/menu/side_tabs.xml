@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Resto de ítems del menú -->
+    <item
+        android:id="@+id/nav_reset_password"
+        android:title="Restablecer Contraseña"/>
+    <item
+        android:id="@+id/nav_change_email"
+        android:title="Cambiar Correo"/>
+    <item
+        android:id="@+id/nav_change_phone"
+        android:title="Cambiar Teléfono"/>
+    <item
+        android:id="@+id/nav_Logout"
+        android:title="Cambiar Teléfono"/>
+</menu>
