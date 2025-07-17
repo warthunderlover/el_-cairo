@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!-- se cambio de constraint a drawer por que en si esta mierda es de el menú. -->
+
 <androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,9 +11,13 @@
     android:layout_height="match_parent"
     tools:context=".menu_principal">
 
+    <!-- no se  para que putas sirve esto sinceramente, faavor no cambiar nada por que asi sirve bien :D-->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
+
+        <!-- con estó jalo las mierdas del menú -->
 
         <TextView
             android:id="@+id/txt_emanuel"
@@ -25,6 +31,8 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             />
+
+        <!-- botones de enmedio -->
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_Clientes"
@@ -91,6 +99,8 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- esto es la nbavbar, la parte azul de arriba -->
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -109,6 +119,7 @@
             />
 
     </LinearLayout>
+    <!-- aqui estoy haciendo la parte izquierda, el menu -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
