@@ -1,69 +1,80 @@
 package com.example.el_cairo;
 
-import android.os.Bundle;
-import android.text.InputType;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import static com.example.el_cairo.R.id.plusIcon;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.graphics.Color;
+import android.widget.LinearLayout.LayoutParams;
+
+import com.example.el_cairo.R;
 
 public class ruta extends AppCompatActivity {
 
     private LinearLayout routeContainer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_ruta);
+        setContentView(R.layout.activity_main);
 
-        Button btnAddRoute = findViewById(R.id.btnAddRoute);
-        routeContainer = findViewById(R.id.routeContainer);
+        ImageView plusIcon = findViewById(R.id.plusIcon);
+        routeContainer = new LinearLayout(this);
+        routeContainer.setOrientation(LinearLayout.VERTICAL);
 
-        btnAddRoute.setOnClickListener(v -> showAddRouteDialog());
+        // Agregamos el contenedor de rutas debajo del botón
+        LinearLayout mainLayout = findViewById(R.id.addRouteBox).getRootView().findViewById(android.R.id.content);
+        mainLayout = (LinearLayout) mainLayout.getChildAt(0); // Accede al layout raíz
+        mainLayout.addView(routeContainer); // Lo insertamos al final
+
+        plusIcon.setOnClickListener(view -> showAddRouteDialog());
     }
 
     private void showAddRouteDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Por Favor Ingrese el Nombre de la Ruta:");
+        builder.setTitle("Por favor ingrese el nombre de la ruta:");
 
+        // Campo de texto
         final EditText input = new EditText(this);
-        input.setInputType(InputType.TYPE_CLASS_TEXT);
+        input.setHint("Nombre de la ruta");
         builder.setView(input);
 
+        // Botón Aceptar
         builder.setPositiveButton("Aceptar", (dialog, which) -> {
-            String routeName = input.getText().toString();
+            String routeName = input.getText().toString().trim();
             if (!routeName.isEmpty()) {
-                addRouteCard(routeName);
+                addRouteView(routeName);
             }
         });
 
+        // Botón Cancelar
         builder.setNegativeButton("Cancelar", (dialog, which) -> dialog.cancel());
 
         builder.show();
     }
 
-    private void addRouteCard(String routeName) {
-        TextView card = new TextView(this);
-        card.setText("Ruta: " + routeName);
-        card.setTextSize(18);
-        card.setPadding(30, 30, 30, 30);
-        card.setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
-        card.setTextColor(getResources().getColor(android.R.color.white));
+    private void addRouteView(String routeName) {
+        TextView routeView = new TextView(this);
+        routeView.setText("Ruta: " + routeName);
+        routeView.setTextSize(18);
+        routeView.setPadding(30, 30, 30, 30);
+        routeView.setTextColor(Color.WHITE);
+        routeView.setBackgroundColor(Color.parseColor("#607D8B")); // gris azulado
 
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
+        LayoutParams params = new LayoutParams(
+                LayoutParams.MATCH_PARENT,
+                LayoutParams.WRAP_CONTENT
         );
-        params.setMargins(0, 10, 0, 10);
+        params.setMargins(20, 20, 20, 0);
+        routeView.setLayoutParams(params);
 
-        card.setLayoutParams(params);
-        routeContainer.addView(card);
+        routeContainer.addView(routeView);
     }
 }
