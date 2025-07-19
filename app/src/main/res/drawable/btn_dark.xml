@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Color de fondo del botón -->
+    <solid android:color="#1C2A3A" /> <!-- Puedes cambiarlo por cualquier color oscuro -->
+
+    <!-- Bordes redondeados -->
+    <corners android:radius="20dp" />
+
+    <!-- Padding interno opcional (visual) -->
+    <padding
+        android:left="10dp"
+        android:top="10dp"
+        android:right="10dp"
+        android:bottom="10dp" />
+</shape>
