@@ -50,22 +50,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/btn_back2"
-        android:layout_width="95dp"
-        android:layout_height="74dp"
-        android:backgroundTint="#5B75BC"
-        android:onClick="Main"
-        android:text="Home"
-        android:textDirection="locale"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
+<com.google.android.material.button.MaterialButton
+    android:id="@+id/btn_back2"
+    android:layout_width="95dp"
+    android:layout_height="74dp"
+    android:backgroundTint="#5B75BC"
+    android:onClick="Main"
+    app:icon="@drawable/casa_"
+    app:iconSize="50sp"
+    android:textDirection="locale"
+    android:textSize="16sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.0"/>
     <EditText
         android:id="@+id/editTextText"
         android:layout_width="347dp"

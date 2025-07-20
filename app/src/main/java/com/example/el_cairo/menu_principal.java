@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -19,6 +20,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class menu_principal extends AppCompatActivity {
@@ -27,6 +30,7 @@ public class menu_principal extends AppCompatActivity {
     TextView tv_snv;
     ActionBarDrawerToggle toggle;
     Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +61,6 @@ public class menu_principal extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-
-
                 if (item.getItemId() == R.id.nav_Logout) {
                     finishAffinity();
                 }
@@ -74,4 +76,12 @@ public class menu_principal extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void Rutas(View view){
+        Intent rutas = new Intent(this, rutas.class);
+        startActivity(rutas);
+    }
+
+
+
 }
