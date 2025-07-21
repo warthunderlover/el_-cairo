@@ -34,6 +34,9 @@ public class menu_principal extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_menu_principal);
 
+        findViewById(R.id.btn_Rutas).setOnClickListener(v ->
+                startActivity(new Intent(this, ruta.class)));
+
         drawerLayout = findViewById(R.id.main);
         nv_side = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
