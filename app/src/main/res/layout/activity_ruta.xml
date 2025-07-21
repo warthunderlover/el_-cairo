@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutRuta"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F9FBFF"
-    tools:context=".MainActivity">
+    tools:context=".ruta">
 
-    <!-- Barra superior con título e ícono -->
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -34,7 +34,6 @@
             android:contentDescription="Inicio"/>
     </LinearLayout>
 
-    <!-- Buscador -->
     <LinearLayout
         android:id="@+id/searchBar"
         android:layout_width="match_parent"
@@ -61,7 +60,6 @@
             android:src="@drawable/ic_search" />
     </LinearLayout>
 
-    <!-- Texto -->
     <TextView
         android:id="@+id/textInstruction"
         android:layout_width="wrap_content"
@@ -73,7 +71,6 @@
         android:textSize="16sp"
         android:textStyle="bold" />
 
-    <!-- Botón de agregar ruta -->
     <LinearLayout
         android:id="@+id/addRouteBox"
         android:layout_width="234dp"
@@ -92,22 +89,20 @@
             android:src="@drawable/ic_add_blue" />
     </LinearLayout>
 
-
-    <!-- Fondo inferior con curva y campanita -->
+    <ViewFlipper
+        android:id="@+id/routeSlider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_below="@id/addRouteBox"
+        android:layout_marginTop="20dp"
+        android:padding="16dp" />
 
     <LinearLayout
         android:id="@+id/navigationButtons"
         android:layout_width="265dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/addRouteBox"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="74dp"
-        android:layout_marginTop="46dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="287dp"
-        android:background="#D9D9D9"
+        android:layout_below="@id/routeSlider"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -136,7 +131,6 @@
         android:layout_alignParentBottom="true"
         android:background="#1C2A3A">
 
-        <!-- Curva blanca superior -->
         <View
             android:layout_width="80dp"
             android:layout_height="40dp"
@@ -144,7 +138,6 @@
             android:layout_marginTop="-20dp"
             android:background="@drawable/curve_top" />
 
-        <!-- Campanita centrada -->
         <ImageView
             android:id="@+id/notificationIcon"
             android:layout_width="40dp"
@@ -155,6 +148,4 @@
             android:contentDescription="Notificación" />
     </RelativeLayout>
 
-
 </RelativeLayout>
-

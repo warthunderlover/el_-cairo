@@ -42,7 +42,6 @@ public class menu_principal extends AppCompatActivity {
         findViewById(R.id.btn_Rutas).setOnClickListener(v ->
                 startActivity(new Intent(this, ruta.class)));
 
-
         //drawer toggle
         toggle = new ActionBarDrawerToggle(this,
                 drawerLayout,
@@ -60,6 +59,7 @@ public class menu_principal extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
 
         nv_side.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -76,6 +76,7 @@ public class menu_principal extends AppCompatActivity {
 
     }
 
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(toggle.onOptionsItemSelected(item)){
@@ -84,4 +85,6 @@ public class menu_principal extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
+
+
 }
