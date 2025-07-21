@@ -22,10 +22,8 @@
             android:exported="false" />
         <activity
             android:name=".ruta"
-            android:exported="true" />
-        <activity
-            android:name=".ruta"
             android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true" >
