@@ -33,7 +33,6 @@ public class menu_principal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_menu_principal);
-
         findViewById(R.id.btn_Rutas).setOnClickListener(v ->
                 startActivity(new Intent(this, ruta.class)));
 
@@ -43,12 +42,16 @@ public class menu_principal extends AppCompatActivity {
         setSupportActionBar(toolbar);
         tv_snv = findViewById(R.id.txt_emanuel);
 
+
         //drawer toggle
         toggle = new ActionBarDrawerToggle(this,
                 drawerLayout,
                 R.string.navigation_drawer_open,
                 R.string.navigation_drawer_close
+
         );
+
+
 
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
@@ -67,7 +70,10 @@ public class menu_principal extends AppCompatActivity {
                 }
                 return true;
             }
+
         });
+
+
     }
 
     @Override
@@ -76,5 +82,6 @@ public class menu_principal extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+
     }
 }
