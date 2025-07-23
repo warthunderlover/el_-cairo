@@ -5,56 +5,38 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class RutaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
-    private static final int TYPE_AGREGAR = 0;
-    private static final int TYPE_RUTA = 1;
+public class RutaAdapter extends RecyclerView.Adapter<RutaAdapter.RutaViewHolder> {
 
     private List<String> rutas;
-    private Context context;
+    private LayoutInflater inflater;
 
     public RutaAdapter(Context context, List<String> rutas) {
-        this.context = context;
         this.rutas = rutas;
+        this.inflater = LayoutInflater.from(context);
+    }
+
+    @NonNull
+    @Override
+    public RutaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = inflater.inflate(R.layout.item_ruta, parent, false);
+        return new RutaViewHolder(view);
     }
 
     @Override
-    public int getItemViewType(int position) {
-        return position == 0 ? TYPE_AGREGAR : TYPE_RUTA;
-    }
-
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (viewType == TYPE_AGREGAR) {
-            View view = LayoutInflater.from(context).inflate(R.layout.item_agregar, parent, false);
-            return new AgregarViewHolder(view);
-        } else {
-            View view = LayoutInflater.from(context).inflate(R.layout.item_ruta, parent, false);
-            return new RutaViewHolder(view);
-        }
-    }
-
-    @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        if (holder instanceof RutaViewHolder) {
-            String ruta = rutas.get(position - 1); // -1 porque el primer item es el botón +
-            ((RutaViewHolder) holder).tvRuta.setText("Ruta: " + ruta);
-        } else {
-            holder.itemView.setOnClickListener(v -> {
-                Toast.makeText(context, "Agregar nueva ruta", Toast.LENGTH_SHORT).show();
-                // Aquí puedes abrir un formulario o dialog
-            });
-        }
+    public void onBindViewHolder(@NonNull RutaViewHolder holder, int position) {
+        String ruta = rutas.get(position);
+        holder.tvRuta.setText("Ruta: " + ruta);
     }
 
     @Override
     public int getItemCount() {
-        return rutas.size() + 1; // +1 por el botón de agregar
+        return rutas.size();
     }
 
     static class RutaViewHolder extends RecyclerView.ViewHolder {
@@ -63,12 +45,6 @@ public class RutaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         RutaViewHolder(View itemView) {
             super(itemView);
             tvRuta = itemView.findViewById(R.id.tvRuta);
-        }
-    }
-
-    static class AgregarViewHolder extends RecyclerView.ViewHolder {
-        AgregarViewHolder(View itemView) {
-            super(itemView);
         }
     }
 }

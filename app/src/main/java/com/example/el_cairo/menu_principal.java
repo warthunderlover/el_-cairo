@@ -18,6 +18,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Arrays;
@@ -30,6 +32,9 @@ public class menu_principal extends AppCompatActivity {
     TextView tv_snv;
     ActionBarDrawerToggle toggle;
     Toolbar toolbar;
+    MaterialButton show;
+    BottomSheetDialog dialog;
+
 
 
     @Override
@@ -43,6 +48,18 @@ public class menu_principal extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         tv_snv = findViewById(R.id.txt_emanuel);
+        /*
+
+            el error que tenia era por que a la hrioa de llamar a show,
+            no lo estaba inicializando.
+
+            hacia un "show.findview" en vez de un "show = findview"
+            por eso el error de "nullpointer".
+
+        */
+        show = findViewById(R.id.show_bottom_);
+
+        dialog = new BottomSheetDialog(this);
 
         //drawer toggle
         toggle = new ActionBarDrawerToggle(this,
@@ -67,6 +84,16 @@ public class menu_principal extends AppCompatActivity {
                 return true;
             }
         });
+        show_values();
+
+        show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.show();
+            }
+        });
+
+
     }
 
     @Override
@@ -82,6 +109,14 @@ public class menu_principal extends AppCompatActivity {
         startActivity(rutas);
     }
 
+    public void show_values() {
+        View view = getLayoutInflater().inflate(R.layout.bottom_dialog,null,false);
+        dialog.setContentView(view);
+    }
 
+    public void Cliente(View view){
+        Intent cliente = new Intent(this, clientes.class);
+        startActivity(cliente);
+    }
 
 }
