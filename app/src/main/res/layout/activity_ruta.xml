@@ -1,22 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layoutRuta"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F9FBFF"
+    android:background="#FFF1F6"
     tools:context=".ruta">
 
+    <!-- Barra superior -->
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#1C2A3A"
+        android:background="#5564AD"
         android:orientation="horizontal"
         android:padding="10dp">
 
         <TextView
-            android:id="@+id/title"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -31,23 +29,24 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_home"
-            android:contentDescription="Inicio"/>
+            android:contentDescription="Inicio" />
     </LinearLayout>
 
+    <!-- Buscador -->
     <LinearLayout
         android:id="@+id/searchBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/topBar"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:gravity="center">
 
         <EditText
             android:id="@+id/searchInput"
-            android:layout_width="357dp"
+            android:layout_width="0dp"
             android:layout_height="52dp"
             android:layout_weight="1"
-            android:background="#E6EFFF"
             android:hint="Buscar Rutas"
             android:paddingHorizontal="10dp" />
 
@@ -60,17 +59,19 @@
             android:src="@drawable/ic_search" />
     </LinearLayout>
 
+    <!-- Texto -->
     <TextView
         android:id="@+id/textInstruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/searchBar"
         android:layout_margin="16dp"
-        android:text="Agregue Seleccione una Ruta:"
+        android:text="Agregue o seleccionese una ruta:"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold" />
 
+    <!-- Cuadro para agregar ruta -->
     <LinearLayout
         android:id="@+id/addRouteBox"
         android:layout_width="234dp"
@@ -89,63 +90,39 @@
             android:src="@drawable/ic_add_blue" />
     </LinearLayout>
 
-    <ViewFlipper
-        android:id="@+id/routeSlider"
+    <!-- Slider horizontal con rutas -->
+    <HorizontalScrollView
+        android:id="@+id/routeScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:layout_below="@id/addRouteBox"
-        android:layout_marginTop="20dp"
-        android:padding="16dp" />
-
-    <LinearLayout
-        android:id="@+id/navigationButtons"
-        android:layout_width="265dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/routeSlider"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_below="@id/addRouteBox"
+        android:layout_marginTop="16dp"
+        android:fillViewport="true"
+        android:scrollbars="none">
 
-        <Button
-            android:id="@+id/btnVolver"
+        <LinearLayout
+            android:id="@+id/sliderLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:backgroundTint="#FF0000"
-            android:text="Volver"
-            android:textColor="#FFFFFF" />
+            android:orientation="horizontal"
+            android:padding="10dp" />
+    </HorizontalScrollView>
 
-        <Button
-            android:id="@+id/btnSiguiente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#009929"
-            android:text="Siguiente"
-            android:textColor="#FFFFFF" />
-    </LinearLayout>
-
+    <!-- Barra inferior con campana -->
     <RelativeLayout
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:background="#1C2A3A">
-
-        <View
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="-20dp"
-            android:background="@drawable/curve_top" />
+        android:background="#5564AD">
 
         <ImageView
             android:id="@+id/notificationIcon"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
             android:src="@drawable/ic_bell"
             android:contentDescription="Notificación" />
     </RelativeLayout>
-
 </RelativeLayout>
