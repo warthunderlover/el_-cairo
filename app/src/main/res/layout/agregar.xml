@@ -10,7 +10,7 @@
         android:id="@+id/titulo_dialogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ingrese el nombre de la ruta"
+        android:text="Ingrese los datos requeridos:"
         android:textSize="18sp"
         android:textStyle="bold"
         android:paddingBottom="12dp" />
@@ -19,8 +19,8 @@
         android:id="@+id/edit_nombre_ruta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre de la ruta"
         android:inputType="textPersonName"
+        android:hint="ingrse los datos"
         android:padding="8dp"
         android:background="@android:drawable/edit_text"
         android:layout_marginBottom="16dp" />

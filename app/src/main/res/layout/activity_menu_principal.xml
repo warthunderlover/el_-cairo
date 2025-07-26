@@ -43,6 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#9D1D1D"
+            android:onClick="Cliente"
             android:text="Ventas"
             android:textAlignment="center"
             android:textSize="30dp"
@@ -86,6 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#41991C"
+            android:onClick="Cliente_add"
             android:text="Clientes"
             android:textAlignment="center"
             android:textSize="30dp"
@@ -95,13 +97,12 @@
             app:iconGravity="textTop"
             app:iconPadding="22dp"
             app:iconSize="120dp"
-            app:layout_constraintHorizontal_bias="0.069"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.069"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.311"
-            android:onClick="Cliente"/>
+            app:layout_constraintVertical_bias="0.311" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

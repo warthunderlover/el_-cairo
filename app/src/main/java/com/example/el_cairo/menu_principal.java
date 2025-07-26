@@ -4,26 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
-import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 
 public class menu_principal extends AppCompatActivity {
@@ -115,8 +108,13 @@ public class menu_principal extends AppCompatActivity {
     }
 
     public void Cliente(View view){
-        Intent cliente = new Intent(this, clientes.class);
+        Intent cliente = new Intent(this, agregar_pedido.class);
         startActivity(cliente);
+    }
+
+    public void Cliente_add(View view){
+        Intent cliente_add = new Intent(this, ControlClientes.class);
+        startActivity(cliente_add);
     }
 
 }

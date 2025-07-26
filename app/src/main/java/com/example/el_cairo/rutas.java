@@ -2,7 +2,10 @@ package com.example.el_cairo;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -71,15 +74,13 @@ public class rutas extends AppCompatActivity {
 
         //rutas del slider
         listaRutas = new ArrayList<>();
-        listaRutas.add("Ruta A");
-        listaRutas.add("Ruta B");
-        listaRutas.add("Ruta C");
-
         rutaAdapter = new RutaAdapter(this, listaRutas);
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerRutas.setLayoutManager(layoutManager);
         recyclerRutas.setAdapter(rutaAdapter);
 
+        cargarRutasDesdeBD();
         //card
         mostrarDialogoAgregarRuta();
 
@@ -120,11 +121,32 @@ public class rutas extends AppCompatActivity {
             public void onClick(View v) {
                 String nombreRuta = editNombreRuta.getText().toString().trim();
                 if (!nombreRuta.isEmpty()) {
-                    // Aquí puedes guardar la ruta o hacer lo que necesites
-                    Toast.makeText(rutas.this, "Ruta guardada: " + nombreRuta, Toast.LENGTH_SHORT).show();
-                    listaRutas.add(nombreRuta);
-                    rutaAdapter.notifyItemInserted(listaRutas.size() - 1);
-                    dialog_card.dismiss();
+                //ingresandolos datos a la base de datos:
+
+                    AdminSQLiteOpen adminSQLiteOpen = new AdminSQLiteOpen(rutas.this,"Admin",null,8);
+                    SQLiteDatabase db = adminSQLiteOpen.getWritableDatabase();
+
+                    ContentValues values = new ContentValues();
+                    values.put("nombre_ruta",nombreRuta);
+                    values.put("descripcion","emanuel");
+                    values.put("IdUsuario",1);
+
+
+                    long result = db.insert("Rutas",null,values);
+                    db.close();
+
+                    cargarRutasDesdeBD();
+
+                    if(result!=-1){
+                        // Guardando la ruta en el slider
+                        Toast.makeText(rutas.this, "Ruta guardada: " + nombreRuta, Toast.LENGTH_SHORT).show();
+                        listaRutas.add(nombreRuta);
+                        dialog_card.dismiss();
+
+                    }else{
+                        Toast.makeText(rutas.this,"Error al guardar ruta",Toast.LENGTH_LONG).show();
+                    }
+
                 } else {
                     Toast.makeText(rutas.this, "Por favor, ingrese un nombre.", Toast.LENGTH_SHORT).show();
                 }
@@ -133,6 +155,20 @@ public class rutas extends AppCompatActivity {
 
     }
 
-
+    private void cargarRutasDesdeBD() {
+        listaRutas.clear();  // Limpiamos antes de cargar nuevas
+        AdminSQLiteOpen adminSQLiteOpen = new AdminSQLiteOpen(rutas.this,"Admin",null,7);
+        SQLiteDatabase db = adminSQLiteOpen.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT nombre_ruta FROM Rutas", null);
+        if (cursor.moveToFirst()) {
+            do {
+                String nombreRuta = cursor.getString(0);
+                listaRutas.add(nombreRuta);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        rutaAdapter.notifyDataSetChanged();  // Notifica al adapter
+    }
 }
 

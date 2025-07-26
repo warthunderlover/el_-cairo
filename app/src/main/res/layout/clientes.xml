@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clientes"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ControlClientes">
+
+    <LinearLayout
+        android:layout_width="350sp"
+        android:layout_height="50sp"
+        android:background="@drawable/linear_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.193">
+
+        <SearchView
+            android:id="@+id/search_bar"
+            android:layout_width="335sp"
+            android:layout_height="35sp"
+            android:layout_marginStart="6sp"
+            android:layout_marginTop="8sp"
+            android:background="@drawable/search_background"
+            android:iconifiedByDefault="false"
+            android:queryHint="Buscar cliente"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:scrollbars="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.504"
+        tools:listitem="@layout/item_buscar" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar6"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="15dp"
+        android:background="#5B75BC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.031"
+        app:title="   Clientes"
+        app:titleTextAppearance="@style/ToolbarTitleBold"
+        app:titleTextColor="@color/white">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_back2"
+            android:layout_width="100sp"
+            android:layout_height="65sp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="15sp"
+            android:backgroundTint="#5B75BC"
+            app:icon="@drawable/casa_"
+            app:iconSize="55sp" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+    <!--android:onClick=""-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/show_bottom3"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/boton_bg"
+        app:backgroundTint="@color/blue"
+        app:icon="@drawable/notificacion"
+        app:iconGravity="textTop"
+        app:iconSize="45dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.955" />
+
+
+    <LinearLayout
+        android:layout_width="226dp"
+        android:layout_height="58dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_agregar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/green"
+            android:text="Agregar Cliente"
+            android:textAlignment="textStart"
+            app:icon="@android:drawable/ic_input_add"
+            app:iconSize="48sp"
+            app:iconTint="@color/white" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
