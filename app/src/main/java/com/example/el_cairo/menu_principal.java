@@ -116,5 +116,4 @@ public class menu_principal extends AppCompatActivity {
         Intent cliente_add = new Intent(this, ControlClientes.class);
         startActivity(cliente_add);
     }
-
 }

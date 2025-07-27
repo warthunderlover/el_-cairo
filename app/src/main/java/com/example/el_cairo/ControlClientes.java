@@ -1,9 +1,11 @@
 package com.example.el_cairo;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.SearchView;
 
 import androidx.activity.EdgeToEdge;
@@ -74,4 +76,10 @@ public class ControlClientes extends AppCompatActivity {
         Log.d("SEARCHVIEW", "Resultados encontrados: " + resultados.size());
         busquedaAdapter.actualizarLista(resultados);
     }
+
+    public void Cliente_crear(View view){
+        Intent cliente_create = new Intent(this, add_clients.class);
+        startActivity(cliente_create);
+    }
+
 }
