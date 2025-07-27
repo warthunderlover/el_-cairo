@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- se cambio de constraint a drawer por que en si esta mierda es de el menú. -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<androidx.drawerlayout.widget.DrawerLayout
+
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".menu_principal">
+
+    <!-- no se  para que putas sirve esto sinceramente, faavor no cambiar nada por que asi sirve bien :D-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="40dp"
+            android:background="#5B75BC"
+            android:visibility="visible"
+            app:title="Menú"
+            app:titleTextColor="@color/white" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <!-- con estó jalo las mierdas del menú -->
+
+        <TextView
+            android:id="@+id/txt_emanuel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+
+        <!-- botones de enmedio -->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_Ventas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9D1D1D"
+            android:onClick="Cliente"
+            android:text="Ventas"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/etiqueta_de_precio"
+            app:iconGravity="textTop"
+            app:iconPadding="22dp"
+            app:iconSize="120dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.876"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.311" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_Rutas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#5B75BC"
+            android:onClick="Rutas"
+            android:text="Rutas"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/gps"
+            app:iconGravity="textTop"
+            app:iconPadding="22dp"
+            app:iconSize="120dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.065"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.712" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_Clientes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#41991C"
+            android:onClick="Cliente_add"
+            android:text="Clientes"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/clientes"
+            app:iconGravity="textTop"
+            app:iconPadding="22dp"
+            app:iconSize="120dp"
+            app:layout_constraintHorizontal_bias="0.069"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.311" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/show_bottom_"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/boton_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:backgroundTint="@color/blue"
+            app:icon="@drawable/notificacion"
+            app:iconGravity="textTop"
+            app:iconSize="45dp"
+            app:layout_constraintVertical_bias="0.96"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- esto es la nbavbar, la parte azul de arriba -->
+
+    <!-- aqui estoy haciendo la parte izquierda, el menu -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:layout_marginTop="100sp"
+        android:backgroundTint="#96AAEF"
+        android:fitsSystemWindows="true"
+        app:itemTextColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/side_tabs"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

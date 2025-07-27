@@ -1,3 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">EL_CAIRO</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
+    <string name="nav_telefono">Telefono</string>
+    <string name="nav_email">cambiar Email</string>
+    <string name="nav_salir">Salir</string>
+    <string name="nav_pass">Cambiar Contraseña</string>
+    <string name="bottom_item">Alerta: Producto Cocacola de 3L bajo</string>
+    <string name="agregar">Agregue o seleccionse una ruta:</string>
+    <string name="agregar_cliente">Pedidos pendientes</string>
+    <string name="add">Porfavor ingrese el nombre de la ruta</string>
+    <string name="Seleccion_Cliente">Seleccione un cliente</string>
 </resources>

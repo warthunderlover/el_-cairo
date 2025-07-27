@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <!-- Resto de ítems del menú -->
+    <item
+        android:id="@+id/nav_reset_password"
+        android:title="@string/nav_pass"/>
+    <item
+        android:id="@+id/nav_change_email"
+        android:title="@string/nav_email"/>
+    <item
+        android:id="@+id/nav_change_phone"
+        android:title="@string/nav_telefono"/>
+    <item
+        android:id="@+id/nav_Logout"
+        android:title="@string/nav_salir" />
+</menu>
