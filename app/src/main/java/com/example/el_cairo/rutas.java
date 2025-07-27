@@ -123,12 +123,11 @@ public class rutas extends AppCompatActivity {
                 if (!nombreRuta.isEmpty()) {
                 //ingresandolos datos a la base de datos:
 
-                    AdminSQLiteOpen adminSQLiteOpen = new AdminSQLiteOpen(rutas.this,"Admin",null,8);
+                    AdminSQLiteOpen adminSQLiteOpen = new AdminSQLiteOpen(rutas.this,"Admin",null,14);
                     SQLiteDatabase db = adminSQLiteOpen.getWritableDatabase();
 
                     ContentValues values = new ContentValues();
                     values.put("nombre_ruta",nombreRuta);
-                    values.put("descripcion","emanuel");
                     values.put("IdUsuario",1);
 
 
@@ -157,7 +156,7 @@ public class rutas extends AppCompatActivity {
 
     private void cargarRutasDesdeBD() {
         listaRutas.clear();  // Limpiamos antes de cargar nuevas
-        AdminSQLiteOpen adminSQLiteOpen = new AdminSQLiteOpen(rutas.this,"Admin",null,7);
+        AdminSQLiteOpen adminSQLiteOpen = new AdminSQLiteOpen(rutas.this,"Admin",null,14);
         SQLiteDatabase db = adminSQLiteOpen.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT nombre_ruta FROM Rutas", null);
         if (cursor.moveToFirst()) {

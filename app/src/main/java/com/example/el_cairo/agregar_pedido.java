@@ -94,7 +94,7 @@ public class agregar_pedido extends AppCompatActivity {
                 if (!descripcionPedido.isEmpty()) {
                     //ingresandolos datos a la base de datos:
 
-                    AdminSQLiteOpen adminSQLiteOpen = new AdminSQLiteOpen(agregar_pedido.this,"Admin",null,8);
+                    AdminSQLiteOpen adminSQLiteOpen = new AdminSQLiteOpen(agregar_pedido.this,"Admin",null,9);
                     SQLiteDatabase db = adminSQLiteOpen.getWritableDatabase();
 
                     ContentValues values = new ContentValues();
@@ -126,7 +126,7 @@ public class agregar_pedido extends AppCompatActivity {
 
     private void cargarPedidosDesdeBD() {
         listaPedido.clear();  // Limpiamos antes de cargar nuevas
-        AdminSQLiteOpen adminSQLiteOpen = new AdminSQLiteOpen(agregar_pedido.this,"Admin",null,8);
+        AdminSQLiteOpen adminSQLiteOpen = new AdminSQLiteOpen(agregar_pedido.this,"Admin",null,9);
         SQLiteDatabase db = adminSQLiteOpen.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT DescripcionPedido FROM pedidos", null);
         if (cursor.moveToFirst()) {

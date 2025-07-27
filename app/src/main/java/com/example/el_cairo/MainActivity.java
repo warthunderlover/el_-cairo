@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void Login(View view){
-        AdminSQLiteOpen adminSQLiteOpen = new AdminSQLiteOpen(this, "Admin", null, 8);
+        AdminSQLiteOpen adminSQLiteOpen = new AdminSQLiteOpen(this, "Admin", null, 13);
         SQLiteDatabase db = adminSQLiteOpen.getReadableDatabase();
 
         String name = txt_nombre.getText().toString().trim();

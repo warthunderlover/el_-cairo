@@ -59,7 +59,7 @@ public class ControlClientes extends AppCompatActivity {
         List<String> resultados = new ArrayList<>();
 
 //      hacioendo la bsuquda
-        AdminSQLiteOpen adminSQLiteOpen = new AdminSQLiteOpen(ControlClientes.this, "Admin", null, 8);
+        AdminSQLiteOpen adminSQLiteOpen = new AdminSQLiteOpen(ControlClientes.this, "Admin", null, 13);
         SQLiteDatabase db = adminSQLiteOpen.getReadableDatabase();
 
 
