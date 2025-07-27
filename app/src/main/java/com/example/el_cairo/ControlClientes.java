@@ -59,11 +59,14 @@ public class ControlClientes extends AppCompatActivity {
         List<String> resultados = new ArrayList<>();
 
 //      hacioendo la bsuquda
-        AdminSQLiteOpen adminSQLiteOpen = new AdminSQLiteOpen(ControlClientes.this, "Admin", null, 13);
+        AdminSQLiteOpen adminSQLiteOpen = new AdminSQLiteOpen(ControlClientes.this, "Admin", null, 14);
         SQLiteDatabase db = adminSQLiteOpen.getReadableDatabase();
 
 
-        Cursor cursor = db.rawQuery("SELECT name FROM usuario",null);
+        Cursor cursor = db.rawQuery(
+                "SELECT nombreCliente FROM clientes WHERE nombreCliente LIKE ? OR ApellidoCliente LIKE ?",
+                new String[]{"%" + texto + "%", "%" + texto + "%"}
+        );
 
         //viendo lso resultados de la busqueda
 
